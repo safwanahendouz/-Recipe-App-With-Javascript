@@ -21,8 +21,21 @@ fetch(url + "big mac")
             let measure = "";
             if (i.startsWith("strIngredient") && myMeal[i]) {
                 ingredient = myMeal[i];
-                measure = "";
+                measure = myMeal[`strMeasure` + count];
+                count += 1;
+                ingredients.push(`${measure} ${ingredient}
+                    `);
                 
+
             }
         }
-    })
+        console.log(ingredients);
+
+        result.innerHTML = `
+        <img src=${myMeal.strMealThumb}>
+        <div class="details">
+        <h2>${myMeal.strArea}</h2>
+        <h2>${myMeal.strArea}</h2> 
+        </div> 
+        `;
+    });
