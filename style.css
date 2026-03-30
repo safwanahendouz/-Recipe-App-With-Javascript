@@ -1,95 +1,177 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
 }
 
 body {
-    background-color: #f4c531;
+  background-color: #f4c531;
 }
 
 .container {
-    background-color: #fff;
-    font-size: 16px;
-    padding: 3em 2.8em;
-    width: 90vw;
-    max-width: 32em;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    top: 1em;
-    border-radius: 0.6em;
-    box-shadow: 0 1.2em 2.5em rgba(42 ,32, 0, 0.2);
+  background-color: #fff;
+  font-size: 16px;
+  padding: 3em 2.8em;
+  width: 90vw;
+  max-width: 32em;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 1em;
+  border-radius: 0.6em;
+  box-shadow: 0 1.2em 2.5em rgba(42 ,32, 0, 0.2);
 }
 
 .search-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 9fr 3fr;
-    gap: 1.2em;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 3fr;
+  gap: 1.2em;
 }
 
 .search-container input {
-    font-size: 1em;
-    padding: 0.6em;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #202030;
+  font-size: 1em;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #202030;
 }
 
 .search-container button {
-    font-size: 1em;
-    background-color: #f4c531;
-    border: none;
-    font-weight: 600;
-    border-radius: 0.3em;
-    cursor: pointer;
+  font-size: 1em;
+  background-color: #f4c531;
+  border: none;
+  font-weight: 600;
+  border-radius: 0.3em;
+  cursor: pointer;
 }
 
 .search-container button:hover {
-    background-color: #f0bd16;
-    border: 1.5px solid black;
+  background-color: #f0bd16;
+  border: 1.5px solid black;
 }
 
 img {
-    display: block;
-    width: 50%;
-    margin: 1.8em auto 0 auto;
+  display: block;
+  width: 50%;
+  margin: 1.8em auto 0 auto;
 }
 
 .details {
-    background-color: #f4c531;
-    position: relative;
-    margin: -4.3em 0 0 0;
-    text-align: center;
-    padding: 0.6em 0;
+  background-color: #f4c531;
+  position: relative;
+  margin: -4.3em 0 0 0;
+  text-align: center;
+  padding: 0.6em 0;
 }
 
 .details h2 {
-    font-size: 1.2em;
-    font-weight: 600;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .details h4 {
-    font-size: 1em;
-    font-weight: 400;
+  font-size: 1em;
+  font-weight: 400;
 }
 
 #show-recipe {
-    font-size: 1em;
-    position: relative;
-    left: 75%;
-    padding: 0.9em 0.6em;
-    background-color: #f4c531;
-    border: none;
-    top: 1.5em;
-    border-radius: 0.3em;
-    font-weight: 600;
+  display: block;
+  width: 100%;
+  margin-top: 1.5em;
+  padding: 0.75em 1em;
+  font-size: 1em;
+  font-weight: 600;
+  background-color: #f4c531;
+  border: none;
+  border-radius: 0.4em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#show-recipe:hover {
+  background-color: #f0bd16;
 }
 
 #recipe {
-    position: absolute;
-    background-color: #ffff;
-    min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+.recipe-inner {
+  background-color: #fff;
+  border-radius: 0.6em;
+  width: 100%;
+  max-width: 36em;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 1.5em;
+  position: relative;
+}
+
+#hide-recipe {
+  position: absolute;
+  top: 0.8em;
+  right: 0.8em;
+  width: 2em;
+  height: 2em;
+  font-size: 1em;
+  font-weight: 700;
+  background-color: #f4c531;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#hide-recipe:hover {
+  background-color: #f0bd16;
+}
+
+#instructions {
+  white-space: pre-wrap;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95em;
+  line-height: 1.7;
+  color: #202030;
+  margin-top: 1em;
+}
+
+.recipe-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+  padding-right: 2em;
+  color: #202030;
+}
+
+ul {
+  font-size: 1em;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.8em 1.1em;
+  padding: 1.2em 0 1.2em 1.2em;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 1.8em;
+  color: #202030;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    font-size: 14px;
+  }
 }
